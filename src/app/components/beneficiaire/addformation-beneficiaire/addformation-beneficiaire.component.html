@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-12">
+            <h5 class="form-title">Add Formation</h5>
+        </div>
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label>Beneficiaire Name <span class="login-danger">*</span></label>
+                <input class="form-control" type="text" placeholder="Beneficiaire Name" [value]="beneficiaireName" disabled>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label>Formation <span class="login-danger">*</span></label>
+                <select class="form-control" formControlName="formationId">
+                    <option value="" disabled>Select a formation</option>
+                    <option *ngFor="let formation of formations" [value]="formation.id">{{ formation.description }}</option>
+                </select>
+            </div>
+        </div>
+        <!-- You can add more form fields for other attributes of the formation -->
+        <div class="col-12">
+            <div class="formation-submit">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>

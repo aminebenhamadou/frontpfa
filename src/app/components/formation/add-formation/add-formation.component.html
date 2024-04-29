@@ -1,0 +1,80 @@
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <div class="page-sub-header">
+                    <h3 class="page-title">Add Formations</h3>
+                    <ul class="breadcrumb">
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card comman-shadow">
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="form-title student-info">Formations Informations <span><a href="javascript:;"><i
+                                    class="feather-more-vertical"></i></a></span></h5>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Description <span class="login-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="description" required
+                                        formControlName="description">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Price<span class="login-danger">*</span></label>
+                                    <input class="form-control" type="number" placeholder="Enter price" required
+                                        formControlName="price">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Start Date <span class="login-danger">*</span></label>
+                                    <input class="form-control" type="date" placeholder="Enter startDate" required
+                                        formControlName="startDate">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>End Date </label>
+                                    <input class="form-control" type="date" placeholder="Enter End Date"
+                                        formControlName="endDate">
+                                </div>
+                            </div>
+                         
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                  <label>Formateur</label>
+                                  <select class="form-control" required formControlName="formateur">
+                                    <option value="" disabled selected>Select a formateur</option>
+                                    <option *ngFor="let formateur of formateurs" [ngValue]="formateur">{{ formateur.firstName }} {{ formateur.lastName }}</option>
+                                  </select>
+                                  
+                                </div>
+                              </div>
+                              
+                            
+
+                            <div class="col-12">
+                                <div class="student-submit">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

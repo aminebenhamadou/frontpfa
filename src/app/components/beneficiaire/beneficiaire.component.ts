@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Beneficiaire } from 'src/app/models/Beneficiaire';
 import { BeneficiaireService } from 'src/app/services/BeneficiaireService';
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ModalBeneficiaireComponent } from './modal-beneficiaire/modal-beneficiaire.component';
 @Component({
   selector: 'app-beneficiaire',
   templateUrl: './beneficiaire.component.html',
@@ -11,7 +12,7 @@ export class BeneficiaireComponent implements OnInit {
   beneficiaires: Beneficiaire[] = [];
   filteredBeneficiaires: Beneficiaire[] = [];
 
-  constructor(private beneficiaireService: BeneficiaireService) {}
+  constructor(private beneficiaireService: BeneficiaireService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getAllBeneficiaires();
@@ -45,6 +46,7 @@ export class BeneficiaireComponent implements OnInit {
       );
     }
   }
+
   downloadExcel(): void {
     this.beneficiaireService.downloadExcel(this.beneficiaires).subscribe(
       (data) => {
@@ -93,6 +95,15 @@ searchBeneficiairesByPhone(event: Event): void {
       (beneficiaire) => beneficiaire.phoneNumber.includes(phone)
     );
     console.log('Filtered Beneficiaires:', this.filteredBeneficiaires); // Debug statement
+}
+view(id:any)
+{
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.width = '700px';
+    dialogConfig.data= id;
+    this.dialog.open(ModalBeneficiaireComponent,dialogConfig);
+
+
 }
 
 

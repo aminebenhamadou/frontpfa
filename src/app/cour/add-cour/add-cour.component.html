@@ -1,0 +1,47 @@
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <div class="page-sub-header">
+                    <h3 class="page-title">Ajouter un cours</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card comman-shadow">
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="form-title student-info">Informations sur le cours</h5>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Titre <span class="login-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Entrez le titre"
+                                        formControlName="title">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <div class="form-group local-forms">
+                                    <label>Description <span class="login-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Entrez la description"
+                                        formControlName="description">
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="student-submit">
+                                    <button type="submit" class="btn btn-primary">Soumettre</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

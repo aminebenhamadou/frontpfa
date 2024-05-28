@@ -1,0 +1,52 @@
+<div class="content container-fluid">
+    <div class="page-header">
+        <div class="row align-items-center">
+            <div class="col-sm-12">
+                <div class="page-sub-header">
+                    <h3 class="page-title">Edit Cour</h3>
+                    <ul class="breadcrumb">
+                        <!-- Add breadcrumb content if needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card comman-shadow">
+                <div class="card-body">
+                    <form (submit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-12">
+                                <h5 class="form-title student-info">Cour Information <span><a href="javascript:;"><i
+                                    class="feather-more-vertical"></i></a></span></h5>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Title <span class="login-danger">*</span></label>
+                                    <input class="form-control" type="text" placeholder="Enter Title" required
+                                        [(ngModel)]="cour.title" name="title">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-8">
+                                <div class="form-group local-forms">
+                                    <label>Description <span class="login-danger">*</span></label>
+                                    <textarea class="form-control" placeholder="Enter Description" required
+                                        [(ngModel)]="cour.description" name="description"></textarea>
+                                </div>
+                            </div>
+                            <!-- Add more form fields as needed for Cour properties -->
+                            <!-- Example: Associated Formation or other relevant data -->
+
+                            <div class="col-12">
+                                <div class="student-submit">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

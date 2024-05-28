@@ -12,6 +12,12 @@ import { EditFormationComponent } from './components/formation/edit-formation/ed
 import { BeneficiairegridComponent } from './components/beneficiairegrid/beneficiairegrid.component';
 import { FormateurgridComponent } from './formateurgrid/formateurgrid.component';
 import { AddformationBeneficiaireComponent } from './components/beneficiaire/addformation-beneficiaire/addformation-beneficiaire.component';
+import { CourComponent } from './cour/cour.component';
+import { AddCourComponent } from './cour/add-cour/add-cour.component';
+import { EditCourComponent } from './cour/edit-cour/edit-cour.component';
+import { SalleComponent } from './salle/salle.component';
+import { AddSalleComponent } from './salle/add-salle/add-salle.component';
+import { EditSalleComponent } from './salle/edit-salle/edit-salle.component';
 const routes: Routes = [
   { path: 'beneficiaire', component: BeneficiaireComponent },
   { path: 'beneficiairegrid', component: BeneficiairegridComponent },
@@ -24,7 +30,14 @@ const routes: Routes = [
   { path: 'formation', component: FormationComponent },
   { path: 'formation/add-formation', component: AddFormationComponent },
   { path: 'formation/edit/:id', component: EditFormationComponent } ,
-  { path: 'add-formation/:beneficiaireId', component: AddformationBeneficiaireComponent } 
+  { path: 'add-formation/:beneficiaireId', component: AddformationBeneficiaireComponent },
+  { path: 'cour', component: CourComponent },
+  { path: 'cour/add-cour', component: AddCourComponent },
+  { path: 'cour/edit/:id', component: EditCourComponent },
+  { path: 'salle', component:SalleComponent},
+  { path: 'salle/add-salle' , component: AddSalleComponent},
+  {path: 'salle/edit/:id' , component: EditSalleComponent}
+
 ];
 
 

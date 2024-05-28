@@ -1,4 +1,6 @@
+import { Cour } from './Cour';
 import { Formateur } from './Formateur';
+import { Salle } from './Salle';
 
 
 export interface Formation {
@@ -9,6 +11,8 @@ export interface Formation {
     startDate: LocalDate;
     endDate: LocalDate;
     formateur: Formateur;
+    cours: Cour[];
+    salle: Salle;
 }
     
 export enum FormationStatus {

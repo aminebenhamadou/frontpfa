@@ -12,20 +12,29 @@ import { EditFormateurComponent } from './components/formateur/edit-formateur/ed
 import { FormationComponent } from './components/formation/formation.component';
 import { AddFormationComponent } from './components/formation/add-formation/add-formation.component';
 import { EditFormationComponent } from './components/formation/edit-formation/edit-formation.component';
-import { RouterModule , Routes} from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BeneficiairegridComponent } from './components/beneficiairegrid/beneficiairegrid.component';
-import { FormateurgridComponent } from './formateurgrid/formateurgrid.component';
 import { AddformationBeneficiaireComponent } from './components/beneficiaire/addformation-beneficiaire/addformation-beneficiaire.component';
-import { CourComponent } from './cour/cour.component';
-import { AddCourComponent } from './cour/add-cour/add-cour.component';
-import { EditCourComponent } from './cour/edit-cour/edit-cour.component';
-import { SalleComponent } from './salle/salle.component';
-import { AddSalleComponent } from './salle/add-salle/add-salle.component';
-import { EditSalleComponent } from './salle/edit-salle/edit-salle.component';
+import { CourComponent } from './components/cour/cour.component';
+import { AddCourComponent } from '../app/components/cour/add-cour/add-cour.component';
+import { EditCourComponent } from '../app/components/cour/edit-cour/edit-cour.component';
+import { SalleComponent } from './components/salle/salle.component';
+import { AddSalleComponent } from '../app/components/salle/add-salle/add-salle.component';
 import { BeneficiaireComponent } from './components/beneficiaire/beneficiaire.component';
-import {MatDialogModule} from '@angular/material/dialog';
-import { ModalBeneficiaireComponent } from './components/beneficiaire/modal-beneficiaire/modal-beneficiaire.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgChartsModule, ThemeService } from 'ng2-charts';
+import { ChartComponent } from './components/chart/chart.component';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
+import { Chart, registerables } from 'chart.js';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FormateurgridComponent } from './components/formateurgrid/formateurgrid.component';
+import { MapComponent } from './components/map/map.component';
+import { TeachingHistoryComponent } from './components/chart/teachinghistory/teachinghistory.component';
+import { EditSalleComponent } from './components/salle/edit-salle/edit-salle.component';
+Chart.register(...registerables);
+Chart.register(ChartDataLabels);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,29 +47,33 @@ import { ModalBeneficiaireComponent } from './components/beneficiaire/modal-bene
     AddFormationComponent,
     EditFormationComponent,
     BeneficiairegridComponent,
-    FormateurgridComponent,
     AddformationBeneficiaireComponent,
     CourComponent,
     AddCourComponent,
     EditCourComponent,
-    SalleComponent,
     AddSalleComponent,
     EditSalleComponent,
     BeneficiaireComponent,
-    ModalBeneficiaireComponent,
-    
+    ChartComponent,
+    MapComponent,
+    SalleComponent,
+    FormateurgridComponent,
+    TeachingHistoryComponent
+
   ],
-  imports:[
+  imports: [
     BrowserModule,
     RouterModule,
-    AppRoutingModule ,
+    AppRoutingModule,
     ReactiveFormsModule,
     NgxDropzoneModule,
     HttpClientModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgChartsModule,
+    LeafletModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

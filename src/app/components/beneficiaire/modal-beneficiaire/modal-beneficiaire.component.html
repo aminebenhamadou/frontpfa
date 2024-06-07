@@ -1,1 +1,22 @@
-<p>modal-beneficiaire works!</p>
+<div class="modal-container">
+  <div class="modal-content" [hidden]="!data">
+    <h2>Beneficiary Details</h2>
+    <div>
+      <p><strong>ID:</strong> {{ data.id }}</p>
+      <p><strong>CIN:</strong> {{ data.cin }}</p>
+      <p><strong>First Name:</strong> {{ data.firstName }}</p>
+      <p><strong>Last Name:</strong> {{ data.lastName }}</p>
+   
+      <p><strong>Phone Number:</strong> {{ data.phoneNumber }}</p>
+      <p><strong>Email:</strong> {{ data.email }}</p>
+      <p><strong>Address:</strong> {{ data.adress }}</p>
+      <p><strong>Education Level:</strong> {{ data.educationLevel }}</p>
+      <p><strong>Education Level:</strong> {{ data.sexe }}</p>
+      <h3>Formations</h3>
+      <ul>
+        <li *ngFor="let formation of data.formations">{{ formation.description }}</li>
+      </ul>
+    </div>
+    <button mat-button (click)="close()">Close</button>
+  </div>
+</div>

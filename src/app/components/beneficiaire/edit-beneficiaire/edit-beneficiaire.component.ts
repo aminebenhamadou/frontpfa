@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Beneficiaire } from 'src/app/models/Beneficiaire';
-import { BeneficiaireService } from 'src/app/services/BeneficiaireService';
-import { UploadService } from 'src/app/upload.service';
+import { Beneficiaire } from '../../../models/Beneficiaire';
+import { BeneficiaireService } from '../../../services/BeneficiaireService';
+import { UploadService } from '../../../services/upload.service';
 
 @Component({
   selector: 'app-edit-beneficiaire',

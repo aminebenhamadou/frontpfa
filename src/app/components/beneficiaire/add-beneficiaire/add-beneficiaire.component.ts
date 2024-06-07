@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Beneficiaire } from 'src/app/models/Beneficiaire';
-import { BeneficiaireService } from 'src/app/services/BeneficiaireService';
-import { UploadService } from 'src/app/upload.service';
-import { Formation, LocalDate } from 'src/app/models/Formation';
-import { FormationService } from 'src/app/services/FormationService';
+import { Beneficiaire, Sexe } from '../../../models/Beneficiaire';
+import { BeneficiaireService } from '../../../services/BeneficiaireService';
+import { UploadService } from '../../../services/upload.service';
+import { Formation } from '../../../models/Formation';
+import { FormationService } from '../../../services/FormationService';
 
 @Component({
   selector: 'app-add-beneficiaire',
@@ -20,6 +20,7 @@ export class AddBeneficiaireComponent implements OnInit {
   imageUploaded: boolean = false;
   formations: Formation[] = [];
   selectedFormations: Formation[] = [];
+  beneficiairesexe = Object.values(Sexe);
 
   constructor(
     private beneficiaireService: BeneficiaireService,
@@ -34,11 +35,12 @@ export class AddBeneficiaireComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      educationLevel: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      cin: ['', [Validators.required]],
-      adress: ['', [Validators.required]],
-      image: ['', [Validators.required]],
+      educationLevel: ['', Validators.required],
+      phoneNumber: ['', Validators.required],
+      cin: ['', Validators.required],
+      adress: ['', Validators.required],
+      image: ['', Validators.required],
+      sexe: ['', Validators.required],
       formations: ['']
     });
   
@@ -46,7 +48,6 @@ export class AddBeneficiaireComponent implements OnInit {
       this.formations = formations;
     });
   }
-  
 
   onSelect(event: any): void {
     console.log(event);
@@ -77,19 +78,13 @@ export class AddBeneficiaireComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // Associer les formations sélectionnées au nouveau bénéficiaire
-    this.newBeneficiaire.formations = this.selectedFormations;
-
     this.beneficiaireService.addBeneficiaire(this.newBeneficiaire).subscribe(
       (res: any) => {
-        // Handle success response
-        console.log('Beneficiaire added successfully:', res);
-        // Reset the form after successful submission
+        console.log('beneficiaire added successfully:', res);
         this.resetForm();
         this.router.navigate(['/beneficiaire']);
       },
       (error) => {
-        // Handle error response
         console.error('Error adding beneficiaire:', error);
       }
     );
@@ -98,8 +93,8 @@ export class AddBeneficiaireComponent implements OnInit {
   resetForm(): void {
     this.form.reset();
     this.selectedFormations = []; // Réinitialiser les formations sélectionnées
+    this.files = []; // Réinitialiser les fichiers
+    this.imageUrl = ''; // Réinitialiser l'URL de l'image
+    this.imageUploaded = false; // Réinitialiser le statut de l'image
   }
-
-
-  
 }

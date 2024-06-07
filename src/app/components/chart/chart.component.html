@@ -1,0 +1,109 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-xl-6 col-sm-6 col-12 d-flex" *ngFor="let card of cards">
+      <div class="card bg-comman w-100">
+        <div class="card-body">
+          <div class="db-widgets d-flex justify-content-between align-items-center">
+            <div class="db-info">
+              <h6>{{ card.title }}</h6>
+              <h3>{{ card.value }}</h3>
+            </div>
+            <div class="db-icon">
+              <img [src]="card.icon" alt="Dashboard Icon">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <h5 class="card-title">Beneficiaries and Teachers</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-container" style="display: block; height:400px; width:100%;">
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [options]="pieChartOptions"
+                    [type]="pieChartType"
+                    [legend]="pieChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <h5 class="card-title">Beneficiaries by Gender</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-container" style="display: block; height:400px; width:100%;">
+            <canvas baseChart
+                    [data]="barChartData"
+                    [options]="barChartOptions"
+                    [type]="barChartType"
+                    [legend]="barChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <h5 class="card-title">Formations by Trainers</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-container" style="display: block; height:400px; width:100%;">
+            <canvas baseChart
+                    [data]="formateurChartData"
+                    [options]="formateurChartOptions"
+                    [type]="formateurChartType"
+                    [legend]="formateurChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12 col-lg-6">
+      <div class="card card-chart">
+        <div class="card-header">
+          <div class="row align-items-center">
+            <div class="col-6">
+              <h5 class="card-title">Number of Formations by Name</h5>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-container" style="display: block; height:400px; width:100%;">
+            <canvas baseChart
+                    [data]="donutChartData"
+                    [options]="donutChartOptions"
+                    [type]="donutChartType"
+                    [legend]="donutChartLegend">
+            </canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

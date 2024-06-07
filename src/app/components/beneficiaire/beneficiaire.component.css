@@ -1,3 +1,16 @@
 .custom-table-width {
     width: 100%;
 }
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table th, .table td {
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .table th, .table td {
+        white-space: normal;
+    }
+}

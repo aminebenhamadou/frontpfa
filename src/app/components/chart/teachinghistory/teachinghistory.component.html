@@ -1,0 +1,23 @@
+<div class="card flex-fill comman-shadow">
+    <div class="card-header d-flex align-items-center">
+      <h5 class="card-title">Teaching History</h5>
+      <ul class="chart-list-out student-ellips">
+        <li class="star-menus"><a href="javascript:;"><i class="fas fa-ellipsis-v"></i></a></li>
+      </ul>
+    </div>
+    <div class="card-body small-card-body">
+      <div class="timeline">
+        <ul class="timeline-list">
+          <li *ngFor="let formation of formations" [ngClass]="formation.status.toLowerCase()">
+            <div class="timeline-content">
+              <span class="timeline-date">{{ formation.startDate | date:'yyyy-MM-dd' }}</span>
+              <h4>{{ formation.description }}</h4>
+              <p>Formateur: {{ formation.formateur.firstName }} {{ formation.formateur.lastName }}</p>
+              <p>Status: {{ formation.status }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

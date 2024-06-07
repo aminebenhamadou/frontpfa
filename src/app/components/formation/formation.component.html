@@ -24,7 +24,6 @@
                     <input type="text" class="form-control" placeholder="Search by Formateur ..." (input)="searchformationsByFormateur($event)">
                 </div>
             </div>
-           
         </div>
     </div>
     <div class="row">
@@ -56,6 +55,8 @@
                                     <th><i class="feather feather-calendar"></i> Start Date</th>
                                     <th><i class="feather feather-calendar"></i> End Date</th>
                                     <th><i class="feather feather-user"></i> Formateur</th>
+                                    <th><i class="feather feather-user"></i> Cours</th>
+                                    <th><i class="feather feather-user"></i> Salle</th>
                                     <th class="text-end"><i class="feather feather-settings"></i> Actions</th>
                                 </tr>
                             </thead>
@@ -74,6 +75,9 @@
                                     <td>{{ formation.startDate }}</td>
                                     <td>{{ formation.endDate }}</td>
                                     <td>{{ formation.formateur.firstName }} {{ formation.formateur.lastName }}</td>
+                                    <td>{{ formation.cour.title }}</td>
+                                    <td>{{ formation.salle.name }}</td>
+                                   
                                     <td class="text-end">
                                         <div class="actions">
                                             <a href="javascript:;" class="btn btn-sm bg-success-light me-2"><i class="feather-eye"></i></a>
@@ -82,9 +86,6 @@
                                         </div>
                                     </td>
                                 </tr>
-                                
-                                
-                                
                             </tbody>
                         </table>
                     </div>

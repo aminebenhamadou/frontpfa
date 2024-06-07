@@ -1,11 +1,11 @@
-// formation.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Formation } from '../models/Formation';
 import { Formateur } from '../models/Formateur';
 
-import * as XLSX from 'xlsx' 
+import * as XLSX from 'xlsx';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,10 +43,18 @@ export class FormationService {
       observer.next(blob);
       observer.complete();
     });
-}
-getFutureFormations(): Observable<Formation[]> {
-  return this.http.get<Formation[]>(`${this.apiUrl}/formations/future`);
-}
+  }
 
+  getFutureFormations(): Observable<Formation[]> {
+    return this.http.get<Formation[]>(`${this.apiUrl}/formations/future`);
+  }
 
+  getBeneficiaryCountByFormation(): Observable<{ [key: string]: number }> {
+    return this.http.get<{ [key: string]: number }>(`${this.apiUrl}/formations/beneficiary-count`);
+  }
+
+ 
+  
+
+  
 }

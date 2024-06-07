@@ -96,18 +96,13 @@ searchBeneficiairesByPhone(event: Event): void {
     );
     console.log('Filtered Beneficiaires:', this.filteredBeneficiaires); // Debug statement
 }
-view(id:any)
-{
+
+view(beneficiaire: any): void {
   const dialogConfig = new MatDialogConfig();
   dialogConfig.width = '700px';
-    dialogConfig.data= id;
-    this.dialog.open(ModalBeneficiaireComponent,dialogConfig);
-
-
+  dialogConfig.data = beneficiaire; // Assurez-vous que beneficiaire contient toutes les données nécessaires
+  this.dialog.open(ModalBeneficiaireComponent, dialogConfig);
 }
-
-
-
 
 
   

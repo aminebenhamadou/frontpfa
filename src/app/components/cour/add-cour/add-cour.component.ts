@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Cour } from 'src/app/models/Cour';
-import { CourService } from 'src/app/services/CourService';
+import { Cour } from '../../../models/Cour';
+import { CourService } from '../../../services/CourService';
 
 @Component({
   selector: 'app-add-cour',
@@ -16,7 +16,7 @@ export class AddCourComponent implements OnInit {
   constructor(
     private courService: CourService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder // FormBuilder is correctly injected
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +39,6 @@ export class AddCourComponent implements OnInit {
         },
         (error) => {
           console.error('Erreur lors de l\'ajout du cours :', error);
-          // Gérer l'erreur ici
         }
       );
     }

@@ -1,5 +1,5 @@
-// beneficiaire.model.ts
 import { Formation } from "./Formation";
+
 
 export interface Beneficiaire {
     id: number;
@@ -11,7 +11,14 @@ export interface Beneficiaire {
     adress: string;
     educationLevel: string;
     image: string;
-    formations: Formation[]; 
+    sexe: Sexe;
+    formations:Formation[]; 
 
-  
 }
+
+export enum Sexe {
+    HOMME = 'HOMME',
+    FEMME = 'FEMME',
+    AUTRE = 'AUTRE'
+}
+

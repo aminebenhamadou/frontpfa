@@ -9,28 +9,28 @@ import * as XLSX from 'xlsx';
 })
 export class CourService {
 
-  private apiUrl = 'http://localhost:6060/cours';
+  private apiUrl = 'http://localhost:6060';
 
   constructor(private http: HttpClient) { }
 
   getAllCours(): Observable<Cour[]> {
-    return this.http.get<Cour[]>(this.apiUrl);
+    return this.http.get<Cour[]>(`${this.apiUrl}/cours`);
   }
 
   getCourById(id: number): Observable<Cour> {
-    return this.http.get<Cour>(`${this.apiUrl}/${id}`);
+    return this.http.get<Cour>(`${this.apiUrl}/cours/${id}`);
   }
 
   createCour(cour: Cour): Observable<Cour> {
-    return this.http.post<Cour>(this.apiUrl, cour);
+    return this.http.post<Cour>(`${this.apiUrl}/cours`, cour);
   }
 
   updateCour(cour: Cour): Observable<Cour> {
-    return this.http.put<Cour>(`${this.apiUrl}/${cour.id}`, cour);
+    return this.http.put<Cour>(`${this.apiUrl}/cours/${cour.id}`, cour);
   }
 
   deleteCour(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/cours/${id}`);
   }
   downloadExcel(beneficiaires: Cour[]): Observable<Blob> {
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(beneficiaires);

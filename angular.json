@@ -25,9 +25,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/leaflet/dist/leaflet.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chartjs-plugin-datalabels/dist/chartjs-plugin-datalabels.js"
+
+            ]
           },
           "configurations": {
             "production": {

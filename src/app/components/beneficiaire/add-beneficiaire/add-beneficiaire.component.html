@@ -74,7 +74,16 @@
                                         [(ngModel)]="newBeneficiaire.adress" name="address">
                                 </div>
                             </div>
-                            <!-- Ajoutez une liste déroulante ou des cases à cocher pour les formations -->
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group local-forms">
+                                    <label>Sexe</label>
+                                    <select class="form-control" [(ngModel)]="newBeneficiaire.sexe" name="sexe">
+                                        <option *ngFor="let sexe of beneficiairesexe" [value]="sexe">{{ sexe }}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Ajoute
+                                z une liste déroulante ou des cases à cocher pour les formations -->
                             <div class="col-12 col-sm-4">
                                 <div class="form-group local-forms">
                                     <label for="formations">Formation</label>
@@ -90,15 +99,6 @@
                             </div>
                             
                             
-                            
-                            
-                            
-
-
-
-
-
-
                             <div class="col-12">
                                 <ngx-dropzone (change)="onSelect($event)">
                                     <ngx-dropzone-label>Drag and Drop Files</ngx-dropzone-label>

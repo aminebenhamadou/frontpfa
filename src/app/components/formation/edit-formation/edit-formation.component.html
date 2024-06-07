@@ -71,6 +71,27 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group">
+                                    <label>Cour <span class="login-danger">*</span></label>
+                                    <select class="form-control" [(ngModel)]="formation.cour.id" name="cours">
+                                        <option *ngFor="let cours of cours" [value]="cours.id">
+                                            {{ cours.title }} 
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-4">
+                                <div class="form-group">
+                                    <label>Salle <span class="login-danger">*</span></label>
+                                    <select class="form-control" [(ngModel)]="formation.salle.id" name="salle">
+                                        <option *ngFor="let salle of salle" [value]="salle.id">
+                                            {{ salle.name }} 
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
                             
 
                             <div class="col-12">

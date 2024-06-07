@@ -5,7 +5,6 @@
                 <div class="page-sub-header">
                     <h3 class="page-title">Students</h3>
                     <ul class="breadcrumb">
-
                         <li class="breadcrumb-item active"></li>
                     </ul>
                 </div>
@@ -59,29 +58,27 @@
                     </div>
 
                     <div class="table-responsive">
-                        <table
-                            class="table border-0 star-student table-hover table-center mb-0 datatable table-striped custom-table-width">
+                        <table class="table border-0 star-student table-hover table-center mb-0 datatable table-striped">
                             <thead class="student-thread">
                                 <tr>
-                                    <th><i class="feather feather-info"></i> ID</th>
-                                    <th><i class="feather feather-image"></i> Image</th>
-                                    <th><i class="feather feather-credit-card"></i> CIN</th>
-                                    <th><i class="feather feather-phone"></i> Phone Number</th>
-                                    <th><i class="feather feather-mail"></i> Email</th>
-                                    <th><i class="feather feather-map-pin"></i> Address</th>
-                                    <th><i class="feather feather-book"></i> Education Level</th>
-                                    <th><i class="feather feather-book-open"></i> Formations</th>
-                                    <th class="text-end"><i class="feather feather-settings"></i> Actions</th>
+                                    <th>ID</th>
+                                    <th>Image</th>
+                                    <th>CIN</th>
+                                    <th>Phone Number</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Education Level</th>
+                                    <th>Sexe</th>
+                                    <th>Formations</th>
+                                    <th class="text-end">Actions</th>
                                 </tr>
                             </thead>
-                            
                             <tbody>
                                 <tr *ngFor="let beneficiaire of filteredBeneficiaires">
                                     <td>{{ beneficiaire.id }}</td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <img class="avatar-img rounded-circle me-2" [src]="beneficiaire.image"
-                                                alt="Beneficiary Image" width="30" height="30">
+                                            <img class="avatar-img rounded-circle me-2" [src]="beneficiaire.image" alt="Beneficiary Image" width="30" height="30">
                                             <span>{{ beneficiaire.firstName }} {{ beneficiaire.lastName }}</span>
                                         </div>
                                     </td>
@@ -90,31 +87,34 @@
                                     <td>{{ beneficiaire.email }}</td>
                                     <td>{{ beneficiaire.adress }}</td>
                                     <td>{{ beneficiaire.educationLevel }}</td>
+                                    <td [ngClass]="{
+                                        'text-success': beneficiaire.sexe === 'HOMME',
+                                        'text-warning': beneficiaire.sexe === 'FEMME',
+                                        'text-danger': beneficiaire.sexe === 'AUTRE',
+                                    }">{{ beneficiaire.sexe }}</td>
                                     <td>
                                         <ul>
-                                            <li *ngFor="let formation of beneficiaire.formations">{{
-                                                formation.description }}</li>
+                                            <li *ngFor="let formation of beneficiaire.formations">{{ formation.description }} - STATUS: {{ formation.status }}</li>
                                         </ul>
                                     </td>
                                     <td class="text-end">
                                         <div class="actions">
-                                            <a [routerLink]="['/add-formation', beneficiaire.id]"
-                                            class="btn btn-sm bg-primary-light">
-                                            <i class="feather feather-plus"></i>
-                                        </a>
-                                            <a href="javascript:;" class="btn btn-sm bg-success-light me-2"><i
-                                                    class="feather-eye"></i></a>
-                                            <a [routerLink]="['/beneficiaire/edit', beneficiaire.id]"
-                                                class="btn btn-sm bg-danger-light"><i class="feather-edit"></i></a>
-                                           
-
-                                            <a href="javascript:;" class="btn btn-sm bg-danger-light"
-                                                (click)="onDelete(beneficiaire.id)"><i class="feather-trash"></i></a>
+                                            <a [routerLink]="['/add-formation', beneficiaire.id]" class="btn btn-sm bg-primary-light">
+                                                <i class="feather feather-plus"></i>
+                                            </a>
+                                            <a href="javascript:;" class="btn btn-sm bg-success-light me-2" (click)="view(beneficiaire)">
+                                                <i class="feather-eye"></i>
+                                            </a>
+                                            <a [routerLink]="['/beneficiaire/edit', beneficiaire.id]" class="btn btn-sm bg-danger-light">
+                                                <i class="feather-edit"></i>
+                                            </a>
+                                            <a href="javascript:;" class="btn btn-sm bg-danger-light" (click)="onDelete(beneficiaire.id)">
+                                                <i class="feather-trash"></i>
+                                            </a>
                                         </div>
                                     </td>
                                 </tr>
                             </tbody>
-
                         </table>
                     </div>
                 </div>

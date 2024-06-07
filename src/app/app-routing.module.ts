@@ -10,14 +10,17 @@ import { FormationComponent } from './components/formation/formation.component';
 import { AddFormationComponent } from './components/formation/add-formation/add-formation.component';
 import { EditFormationComponent } from './components/formation/edit-formation/edit-formation.component';
 import { BeneficiairegridComponent } from './components/beneficiairegrid/beneficiairegrid.component';
-import { FormateurgridComponent } from './formateurgrid/formateurgrid.component';
 import { AddformationBeneficiaireComponent } from './components/beneficiaire/addformation-beneficiaire/addformation-beneficiaire.component';
-import { CourComponent } from './cour/cour.component';
-import { AddCourComponent } from './cour/add-cour/add-cour.component';
-import { EditCourComponent } from './cour/edit-cour/edit-cour.component';
-import { SalleComponent } from './salle/salle.component';
-import { AddSalleComponent } from './salle/add-salle/add-salle.component';
-import { EditSalleComponent } from './salle/edit-salle/edit-salle.component';
+import { CourComponent } from './components/cour/cour.component';
+import { AddCourComponent } from './components/cour/add-cour/add-cour.component';
+import { EditCourComponent } from './components/cour/edit-cour/edit-cour.component';
+import { SalleComponent } from './components/salle/salle.component';
+import { AddSalleComponent } from './components/salle/add-salle/add-salle.component';
+import { EditSalleComponent } from './components/salle/edit-salle/edit-salle.component';
+import { ChartComponent } from './components/chart/chart.component';
+import { FormateurgridComponent } from './components/formateurgrid/formateurgrid.component';
+import { MapComponent } from './components/map/map.component';
+import { TeachingHistoryComponent } from './components/chart/teachinghistory/teachinghistory.component';
 const routes: Routes = [
   { path: 'beneficiaire', component: BeneficiaireComponent },
   { path: 'beneficiairegrid', component: BeneficiairegridComponent },
@@ -32,6 +35,10 @@ const routes: Routes = [
   { path: 'formation/edit/:id', component: EditFormationComponent } ,
   { path: 'add-formation/:beneficiaireId', component: AddformationBeneficiaireComponent },
   { path: 'cour', component: CourComponent },
+  { path: 'teachinghistory', component: TeachingHistoryComponent },
+
+  {path : 'charts', component: ChartComponent},
+  {path : 'map', component: MapComponent},
   { path: 'cour/add-cour', component: AddCourComponent },
   { path: 'cour/edit/:id', component: EditCourComponent },
   { path: 'salle', component:SalleComponent},

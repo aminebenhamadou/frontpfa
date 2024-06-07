@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Formateur } from 'src/app/models/Formateur';
-import { FormateurService } from 'src/app/services/FormateurService';
-import { UploadService } from 'src/app/upload.service';
+import { Formateur } from '../../../models/Formateur';
+import { FormateurService } from '../../../services/FormateurService';
+import { UploadService } from '../../../services/upload.service';
 
 @Component({
   selector: 'app-add-formateur',

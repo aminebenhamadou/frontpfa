@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Salle } from 'src/app/models/Salle';
-import { SalleService } from 'src/app/services/SalleService';
+import { Salle } from '../../../models/Salle';
+import { SalleService } from '../../../services/SalleService';
 @Component({
   selector: 'app-add-salle',
   templateUrl: './add-salle.component.html',

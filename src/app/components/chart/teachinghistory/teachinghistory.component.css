@@ -1,0 +1,147 @@
+.card {
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-header {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  padding: 0.75rem 1.25rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.db-widgets {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.db-info h6 {
+  font-size: 16px;
+  margin: 0;
+  color: #6c757d;
+}
+
+.db-info h3 {
+  font-size: 24px;
+  margin: 0;
+  color: #343a40;
+}
+
+
+.db-icon img {
+  width: 40px;
+  height: 40px;
+}
+
+.chart-list-out {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.chart-list-out li {
+  margin-left: 10px;
+}
+
+.chart-list-out .circle-blue,
+.chart-list-out .circle-green,
+.chart-list-out .circle-pink {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.circle-blue {
+  background-color: #42A5F5; /* Couleur pour Boys */
+}
+
+.circle-pink {
+  background-color: #FF6384; /* Couleur pour Girls */
+}
+
+.circle-green {
+  background-color: #66BB6A; /* Couleur pour Autre */
+}
+
+.timeline {
+  position: relative;
+  padding: 10px 0; /* Réduire le padding */
+  list-style: none;
+}
+
+.timeline-list {
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-list li {
+  position: relative;
+  margin-bottom: 10px; /* Réduire la marge */
+  padding-left: 30px; /* Réduire le padding */
+}
+
+.timeline-list li:before {
+  content: '';
+  position: absolute;
+  left: 15px; /* Ajuster la position du point */
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.timeline-list li:last-child:before {
+  height: 50%;
+  top: 0;
+}
+
+.timeline-content {
+  background: #fff;
+  padding: 8px 10px; /* Réduire le padding */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  position: relative;
+}
+
+.timeline-date {
+  font-size: 12px; /* Réduire la taille de la police */
+  color: #999;
+  margin-bottom: 3px; /* Réduire la marge */
+}
+
+.planned .timeline-content {
+  border-left: 5px solid #0dcaf0;
+}
+
+.in_progress .timeline-content {
+  border-left: 5px solid #ffc107;
+}
+
+.completed .timeline-content {
+  border-left: 5px solid #28a745;
+}
+
+.cancelled .timeline-content {
+  border-left: 5px solid #dc3545;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 300px;
+  }
+}
+.small-card-body {
+  padding: 10px;  /* Adjust padding as needed */
+  font-size: 0.875rem;  /* Example: smaller font size */
+}

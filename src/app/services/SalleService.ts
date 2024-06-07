@@ -9,28 +9,28 @@ import * as XLSX from 'xlsx';
 })
 export class SalleService {
 
-  private apiUrl = 'http://localhost:6060/salles';
+  private apiUrl = 'http://localhost:6060';
 
   constructor(private http: HttpClient) { }
 
   getAllSalles(): Observable<Salle[]> {
-    return this.http.get<Salle[]>(this.apiUrl);
+    return this.http.get<Salle[]>(`${this.apiUrl}/salles`);
   }
 
   getSalleById(id: number): Observable<Salle> {
-    return this.http.get<Salle>(`${this.apiUrl}/${id}`);
+    return this.http.get<Salle>(`${this.apiUrl}/salles/${id}`);
   }
 
   createSalle(salle: Salle): Observable<Salle> {
-    return this.http.post<Salle>(this.apiUrl, salle);
+    return this.http.post<Salle>(`${this.apiUrl}/salles`, salle);
   }
 
-  updateSalle(id: number, salle: Salle): Observable<Salle> {
-    return this.http.put<Salle>(`${this.apiUrl}/${id}`, salle);
+  updateSalle(salle: Salle): Observable<Salle> {
+    return this.http.put<Salle>(`${this.apiUrl}/salles/${salle.id}`, salle);
   }
 
   deleteSalle(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/salles/${id}`);
   }
   downloadExcel(beneficiaires: Salle[]): Observable<Blob> {
     const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(beneficiaires);

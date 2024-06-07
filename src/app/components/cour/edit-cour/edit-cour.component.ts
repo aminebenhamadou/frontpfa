@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Cour } from 'src/app/models/Cour';
-import { CourService } from 'src/app/services/CourService';
+import { Cour } from '../../../models/Cour';
+import { CourService } from '../../../services/CourService';
 
 @Component({
   selector: 'app-edit-cour',

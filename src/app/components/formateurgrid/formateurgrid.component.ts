@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FormateurService } from '../services/FormateurService';
-import { Formateur } from '../models/Formateur';
+import { FormateurService } from '../../services/FormateurService';
+import { Formateur } from '../../models/Formateur';
 @Component({
   selector: 'app-formateurgrid',
   templateUrl: './formateurgrid.component.html',

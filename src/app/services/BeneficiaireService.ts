@@ -23,7 +23,8 @@ export class BeneficiaireService {
 
   addBeneficiaire(beneficiaire: Beneficiaire): Observable<Beneficiaire> {
     return this.http.post<Beneficiaire>(`${this.apiUrl}/beneficiaires`, beneficiaire);
-  }
+}
+
 
   updateBeneficiaire(beneficiaire: Beneficiaire): Observable<Beneficiaire> {
     return this.http.put<Beneficiaire>(`${this.apiUrl}/beneficiaires/${beneficiaire.id}`, beneficiaire);
@@ -47,5 +48,9 @@ export class BeneficiaireService {
     });
 
     
+}
+
+getCountsBySexe(): Observable<any> {
+  return this.http.get<any>(`${this.apiUrl}/beneficiaires/count-by-sexe`);
 }
 }

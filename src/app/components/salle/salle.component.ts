@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SalleService } from '../services/SalleService';
-import { Salle } from '../models/Salle';
+import { SalleService } from '../../services/SalleService';
+import { Salle } from '../../models/Salle';
 @Component({
   selector: 'app-salle',
   templateUrl: './salle.component.html',
